@@ -6,7 +6,7 @@ export const HTTP = axios.create({ baseURL: configuration.apiBaseUrl });
 HTTP.interceptors.request.use(
   async (config) => {
     let token = null;
-    if (configuration.enableIdentityServer) {
+    if (configuration?.enableIdentityServer) {
       token = await auth.getAccessToken();
     } else {
       token = localStorage.getItem("clubeez_session");

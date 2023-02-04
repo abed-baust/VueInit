@@ -7,16 +7,16 @@ export default class AuthService {
     constructor(public extraQueryParams: Record<string, any> = {}) {
         const settings: UserManagerSettings = {
             userStore: new WebStorageStateStore({ store: window.localStorage }),
-            authority: configuration.identity.authority,
-            client_id: configuration.identity.clientId,
-            client_secret: configuration.identity.clientSecret,
-            redirect_uri: configuration.identity.redirectUri,
-            automaticSilentRenew: true,
-            response_type: 'code',
-            scope: 'openid profile offline_access',
-            post_logout_redirect_uri: configuration.identity.postLogoutRedirectUri,
-            filterProtocolClaims: true,
-            extraQueryParams: extraQueryParams
+            // authority: configuration.identity.authority,
+            // client_id: configuration.identity.clientId,
+            // client_secret: configuration.identity.clientSecret,
+            // redirect_uri: configuration.identity.redirectUri,
+            // automaticSilentRenew: true,
+            // response_type: 'code',
+            // scope: 'openid profile offline_access',
+            // post_logout_redirect_uri: configuration.identity.postLogoutRedirectUri,
+            // filterProtocolClaims: true,
+            // extraQueryParams: extraQueryParams
         };
 
         this.userManager = new UserManager(settings);

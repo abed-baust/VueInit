@@ -29,6 +29,12 @@ export default {
   name: "Size1",
   description: "Size2"
 }
+
+// const payload = {
+//   emailOrPhone: "abed.baust1@gmail.com",
+//   password: "Dummy@123",
+//   rememberMe: true
+// }
       console.log('aaa',payload);
       this.$store.dispatch("getToken2",payload);
     }

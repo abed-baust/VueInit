@@ -29,14 +29,17 @@ const auth = {
       
       POST(`api/Users/signin-token`, payload)
         .then((response) => {
-          if (!response.data.data) {
-            commit("INVALID_TOKEN", response.data.data)
+          console.log('token', response.data);
+          if (!response.data) {
+            commit("INVALID_TOKEN", response.data)
           } else {
-            localStorage.setItem("clubeez_session", response.data.data.accessToken);
+            console.log('token', response);
+            
+            localStorage.setItem("clubeez_session", response.data.accessToken);
             console.log(localStorage.getItem("clubeez_session"),'a123');
             
-            commit("GET_TOKEN", response.data.data)
-            window.location.href = window.location.origin + process.env.BASE_URL;
+            commit("GET_TOKEN", response.data)
+            // window.location.href = window.location.origin + process.env.BASE_URL;
           }
         }).catch((error) => {
           commit("SET_ERROR_MESSAGE", error.response.data.errors)
